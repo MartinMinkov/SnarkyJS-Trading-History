@@ -30,6 +30,7 @@ module.exports = {
         sans: ["Roboto", "Helvetica", "Arial", "sans-serif"],
       },
       spacing: {
+        18: "4.5rem",
         30: "7.5rem",
         86: "22rem",
         100: "30rem",

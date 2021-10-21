@@ -29,9 +29,12 @@ const Prove: NextPage = () => {
   const endDate = new Date();
 
   const callSnarkyExchange = async () => {
-    const exchange = await import("../../lib/snarkyjs/exchange");
-    exchange.test();
-    setStatus("proof_complete_idle");
+    return new Promise(async (resolve, _reject) => {
+      const exchange = await import("../../lib/snarkyjs/exchange");
+      const verified = exchange.test();
+      console.log("Verified?", verified);
+      resolve(verified);
+    });
   };
 
   const addProof = async (txnId: string) => {
@@ -53,7 +56,11 @@ const Prove: NextPage = () => {
     if (!APISecret || !APIToken) {
       router.push("/");
     } else {
-      const timeout = setTimeout(() => fetchOrders(), 4000);
+      const timeout = setTimeout(() => {
+        if (orders.length === 0) {
+          fetchOrders();
+        }
+      }, 2000);
       return () => clearTimeout(timeout);
     }
   });
@@ -63,9 +70,10 @@ const Prove: NextPage = () => {
     switch (status) {
       case "proof_generation":
         // Wait to render
-        timeout = setTimeout(() => {
-          callSnarkyExchange();
-        }, 500);
+        timeout = setTimeout(async () => {
+          await callSnarkyExchange();
+          setStatus("proof_complete_idle");
+        }, 250);
         return () => clearTimeout(timeout);
       case "proof_complete_idle":
         timeout = setTimeout(() => {

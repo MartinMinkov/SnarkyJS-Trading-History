@@ -230,6 +230,6 @@ export function test() {
   console.info("logging verification key:", vk);
   console.info("logging keypair:", kp);
   console.info("logging proof:", proof);
-  console.info("verified?", proof.verify(vk, publicInput));
   console.groupEnd();
+  return proof.verify(vk, publicInput);
 }

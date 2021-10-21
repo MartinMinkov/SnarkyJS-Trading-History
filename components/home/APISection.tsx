@@ -3,6 +3,7 @@ import Image from "next/image";
 import Button from "../common/Button";
 import Input from "../common/Input";
 import useSessionStorage from "../../hooks/useSessionStorage";
+import APIPermissions from "../../public/assets/api-permissions.jpg";
 
 interface propTypes {
   onAPISelectionPress: () => void;
@@ -48,7 +49,7 @@ const APISelection = (props: propTypes) => {
         <Input value={APISecret || ""} onChange={setAPISecret} />
       </div>
       <p className="text-xl w-108">Check only ‘Enable Reading’ permisssions:</p>
-      <Image src="/assets/api-permissions.jpg" alt="API permissions" />
+      <Image src={APIPermissions} alt="API permissions" />
       <div className="w-80" onClick={() => onAPISelectionPress()}>
         <Button copy={"Continue"} />
       </div>

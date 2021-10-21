@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { Order } from "../../types";
 import moment from "moment";
-
 import ProveProfitLossPanel from "./ProveProfitLossPanel";
+import { Order } from "../../types";
+import BinanceLogo from "../../public/assets/binance-logo.svg";
+import DateLogo from "../../public/assets/date.svg";
 
 interface propTypes {
   orders: Order[];
@@ -41,16 +42,12 @@ const ProfitInfoPanel = (props: propTypes) => {
     return (
       <div className="flex flex-col items-start h-full w-full space-y-4">
         <div className="flex flex-row w-full space-x-4">
-          <Image
-            className=""
-            src="assets/binance-logo.svg"
-            alt="Binance logo"
-          />
+          <Image src={BinanceLogo} alt="Binance logo" />
           <h2 className="text-lg leading-6">BTCUSDT</h2>
         </div>
         <div className="flex flex-col items-center">
           <div className="flex items-center cursor-pointer w-full h-full space-x-6 ml-2">
-            <Image src="/assets/date.svg" className="w-6" alt="Date graphic" />
+            <Image src={DateLogo} className="w-6" alt="Date graphic" />
             <span className="font-light text-gray-300 hover:text-gray-200">
               {renderDates()}
             </span>

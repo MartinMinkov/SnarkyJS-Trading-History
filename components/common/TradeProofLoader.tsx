@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-
 import Spinner from "./Spinner";
-
 import { LoadingStatus } from "../../types";
+import OrderLogo from "../../public/assets/order.svg";
 
 interface propTypes {
   status: LoadingStatus;
@@ -28,7 +27,9 @@ const TradeProofLoader = (props: propTypes) => {
       );
     } else {
       spinnerComponent = (
-        <Image src="/assets/order.svg" className="w-16 h-16" alt="Loading" />
+        <div className="w-18 h-18">
+          <Image src={OrderLogo} alt="Loading" layout="responsive" />
+        </div>
       );
       textComponent = (
         <p className="text-custom-green mt-3 text-center">{copy}</p>
@@ -122,11 +123,9 @@ const TradeProofLoader = (props: propTypes) => {
 
     if (status === "show_complete" || status === "proof_complete_idle") {
       return (
-        <Image
-          src={"/assets/order.svg"}
-          className="w-44 h-44 mt-1"
-          alt="Order logo"
-        />
+        <div className="w-44 h-44 mt-1 relative">
+          <Image src={OrderLogo} alt="Order logo" layout="fill" />
+        </div>
       );
     } else {
       return (
