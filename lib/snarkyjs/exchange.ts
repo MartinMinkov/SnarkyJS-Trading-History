@@ -107,7 +107,6 @@ function trade({
 }
 
 export function test() {
-  globalThis._hello = Main;
   console.log("generating new keypair...");
   console.time();
   const kp = Main.generateKeypair();
