@@ -19,7 +19,7 @@ export const getServerSideProps = async (context: {
 }) => {
   const { url } = context.params;
   const pathname = process.env.VERCEL_URL
-    ? `${process.env.VERCEL_URL}/api/getProofByURL`
+    ? `https://${process.env.VERCEL_URL}/api/getProofByURL`
     : "http://localhost:3000/api/getProofByURL";
   const res = await fetch(addQueryParamToURL(pathname, "url", url));
   const { data } = await res.json();
