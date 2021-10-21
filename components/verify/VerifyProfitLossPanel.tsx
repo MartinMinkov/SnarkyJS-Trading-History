@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { calculateProfitLoss } from "../../utils";
 import { Order, Transaction } from "../../types";
 
@@ -37,7 +38,7 @@ const VerifyProfitLossPanel = (props: propTypes) => {
       >
         <button className="flex w-full justify-center items-center px-10 py-3 space-x-5 uppercase bg-white bg-opacity-10 hover:bg-opacity-20 text-custom-green border-2 border-custom-green rounded">
           <p className="tracking-extrawidest">Tweet It</p>
-          <img src="/assets/twitter-green.svg" />
+          <Image src="/assets/twitter-green.svg" alt="Twitter logo" />
         </button>
       </a>
     );
@@ -45,7 +46,11 @@ const VerifyProfitLossPanel = (props: propTypes) => {
 
   return (
     <div className="flex flex-col items-center w-full h-full">
-      <img src="/assets/zk-badge.svg" className="absolute -mt-32 w-32 h-32" />
+      <Image
+        src="/assets/zk-badge.svg"
+        className="absolute -mt-32 w-32 h-32"
+        alt="Zero Knowledge graphic"
+      />
       <span className="flex flex-col items-center justify-center text-center">
         <p className="font-normal">{renderProfitLossText()}</p>
         <p className="text-6xl font-thin leading-12 text-custom-green">
@@ -61,7 +66,7 @@ const VerifyProfitLossPanel = (props: propTypes) => {
         rel="noopener noreferrer"
       >
         <div className="flex items-center justify-center space-x-4 cursor-pointer mt-11">
-          <img src="/assets/redirect.svg" />
+          <Image src="/assets/redirect.svg" alt="Redirect graphic" />
           <p className="text-base uppercase tracking-widest hover:text-gray-300 text-custom-light">
             View In Mina Explorer
           </p>

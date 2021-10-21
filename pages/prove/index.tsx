@@ -56,7 +56,7 @@ const Prove: NextPage = () => {
       const timeout = setTimeout(() => fetchOrders(), 4000);
       return () => clearTimeout(timeout);
     }
-  }, []);
+  });
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;

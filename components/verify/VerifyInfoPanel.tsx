@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Order, Transaction } from "../../types";
 
 import VerifyProfitLossPanel from "./VerifyProfitLossPanel";
@@ -28,7 +29,7 @@ const ProfitInfoPanel = (props: propTypes) => {
               <p className="font-light text-xs truncate">{`${baseURL}/share/${transaction.url}`}</p>
             ) : null}
           </span>
-          <img src="/assets/copy.svg" />
+          <Image src="/assets/copy.svg" alt="Copy graphic" />
         </div>
       </button>
     );
@@ -39,12 +40,20 @@ const ProfitInfoPanel = (props: propTypes) => {
       <div className="flex flex-col items-start w-2/5 h-full">
         <div className="flex flex-col items-start h-full w-full space-y-8">
           <div className="flex flex-row w-full space-x-4">
-            <img className="" src="/assets/binance-logo.svg" alt="logo" />
+            <Image
+              className=""
+              src="/assets/binance-logo.svg"
+              alt="Binance logo"
+            />
             <h2 className="text-lg leading-6">BTCUSDT</h2>
           </div>
           <div className="flex flex-col items-center">
             <div className="flex items-center cursor-pointer w-full h-full space-x-6 ml-2">
-              <img src="/assets/date.svg" alt="logo" className="w-6" />
+              <Image
+                src="/assets/date.svg"
+                className="w-6"
+                alt="Date Graphic"
+              />
               <span className="font-light text-gray-300 hover:text-gray-200">
                 2020-04-05 to 2021-08-21
               </span>

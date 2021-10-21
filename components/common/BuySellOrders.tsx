@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import moment from "moment";
 import { Order } from "../../types";
 
@@ -24,7 +25,7 @@ const BuySellOrders = (props: propTypes) => {
         key={order.id}
         className="motion-safe:animate-fadeIn text-white flex flex-col sm:flex-row justify-around sm:justify-center items-center h-auto py-6 sm:py-0 md:h-36 w-full m:w-8/12 bg-light-black bg-opacity-25 hover:bg-opacity-50 cursor-pointer font-light space-x-12"
       >
-        <img src="assets/order.svg" alt="logo" />
+        <Image src="assets/order.svg" alt="logo" />
         <div className="flex flex-col justify-center w-1/2 space-y-4">
           <div className="flex item-center justify-between uppercase">
             <p>

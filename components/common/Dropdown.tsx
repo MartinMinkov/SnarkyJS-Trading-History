@@ -14,7 +14,6 @@ const Dropdown = ({ items, current, setCurrent }: propTypes) => {
       <button
         type="button"
         className="cursor-pointer w-full bg-gray-200 bg-opacity-50 shadow-md pl-3 pr-10 py-2 text-left"
-        aria-expanded="true"
         onClick={() => setSelected(!selected)}
       >
         <span className="flex items-center">
@@ -31,9 +30,7 @@ const Dropdown = ({ items, current, setCurrent }: propTypes) => {
               return (
                 <li
                   className="hover:bg-gray-300 text-gray-900 cursor-pointer select-none relative py-2 pl-3 pr-9"
-                  id="listbox-option-0"
                   key={item}
-                  role="option"
                   onClick={() => {
                     setCurrent(item);
                     setSelected(!selected);

@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
-    <Link href="/">
+    <Link href="/" passHref>
       <header className="w-full flex flex-col md:flex-row justify-between md:justify-center items-center cursor-pointer font-extralight">
-        <img
+        <Image
           src="/assets/zk-logo.svg"
           alt="zk logo"
           className="-mr-12 h-auto w-40"
@@ -16,7 +17,7 @@ const Header = () => {
             Proof-Of-Trade History
           </p>
         </span>
-        <img
+        <Image
           className="w-40 h-auto ml-8 mb-4"
           src="/assets/mina-logo.svg"
           alt="mina logo"

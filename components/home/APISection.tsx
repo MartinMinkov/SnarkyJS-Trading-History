@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Button from "../common/Button";
 import Input from "../common/Input";
 import useSessionStorage from "../../hooks/useSessionStorage";
@@ -47,7 +48,7 @@ const APISelection = (props: propTypes) => {
         <Input value={APISecret || ""} onChange={setAPISecret} />
       </div>
       <p className="text-xl w-108">Check only ‘Enable Reading’ permisssions:</p>
-      <img src="/assets/api-permissions.jpg" />
+      <Image src="/assets/api-permissions.jpg" alt="API permissions" />
       <div className="w-80" onClick={() => onAPISelectionPress()}>
         <Button copy={"Continue"} />
       </div>
