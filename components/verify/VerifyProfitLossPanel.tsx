@@ -34,7 +34,7 @@ const VerifyProfitLossPanel = (props: propTypes) => {
   const renderSendButton = () => {
     return (
       <a
-        href={`https://twitter.com/intent/tweet?text=I proved my trading profits using Mina zero-knowledge Proofs: http://${baseURL}/share/${transaction.url}`}
+        href={`https://twitter.com/intent/tweet?text=I proved my trading profits using Mina zero-knowledge Proofs: https://${baseURL}/share/${transaction.url}`}
         data-size="large"
         target="_blank"
         rel="noopener noreferrer"
