@@ -38,7 +38,7 @@ const Verify = () => {
       }
     };
     let timeout: NodeJS.Timeout;
-    if (txnId) timeout = setTimeout(() => fetchProof(), 250);
+    if (txnId) timeout = setTimeout(() => fetchProof(), 500);
     return () => clearTimeout(timeout);
   }, [txnId]);
 

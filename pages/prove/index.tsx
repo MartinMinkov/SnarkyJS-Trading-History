@@ -71,7 +71,7 @@ const Prove: NextPage = () => {
       case "proof_generation":
         // Wait to render
         timeout = setTimeout(async () => {
-          //await callSnarkyExchange();
+          await callSnarkyExchange();
           setStatus("proof_complete_idle");
         }, 250);
         return () => clearTimeout(timeout);

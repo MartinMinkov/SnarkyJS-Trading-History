@@ -1,16 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import moment from "moment";
+import { currencyFormat } from "../../utils";
 import { Order } from "../../types";
 import OrderLogo from "../../public/assets/order.svg";
-
-// https://blog.abelotech.com/posts/number-currency-formatting-javascript/
-const currencyFormat = (num: string) => {
-  return parseInt(num)
-    .toFixed(2)
-    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-    .replace(/\.00$/, "");
-};
 
 interface propTypes {
   orders: Order[];
