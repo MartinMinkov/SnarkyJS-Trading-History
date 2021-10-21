@@ -10,6 +10,7 @@ export default async function handler(
 ) {
   if (req.method == "GET") {
     const { txnId } = req.query;
+    console.log("txnId", txnId);
     try {
       let query = (await faunaClient.query(
         q.Get(q.Match(q.Index("proofs_by_txnid"), txnId))
