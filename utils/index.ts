@@ -1,0 +1,27 @@
+import { Order } from "../types";
+
+export const calculateProfitLoss = (orders: Order[]) => {
+  const profitLoss = orders
+    .reduce((orders, order) => {
+      const orderProfitLoss =
+        ((parseFloat(order.sell.price) - parseFloat(order.buy.price)) /
+          parseFloat(order.buy.price)) *
+        100;
+      return orders + orderProfitLoss;
+    }, 0)
+    .toFixed(1);
+  return profitLoss;
+};
+
+export const addQueryParamToURL = (
+  path: string,
+  paramName: string,
+  paramValue: string
+) => {
+  const result =
+    `${path}?` +
+    new URLSearchParams({
+      [paramName]: paramValue,
+    });
+  return result;
+};

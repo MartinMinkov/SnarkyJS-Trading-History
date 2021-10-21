@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: RobotoRegular;
+    font-weight: 400;
+    src: url(/fonts/Roboto-Regular-webfont.woff) format("woff");
+  }
+  @font-face {
+    font-family: RobotoThin;
+    font-weight: 400;
+    src: url(/fonts/Roboto-Thin-webfont.woff) format("woff");
+  }
+}
+
+.loader {
+  border-top-color: #14ff00;
+  border-right-color: #14ff00;
+  border-bottom-color: #14ff00;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ TODO: Refactor this
+*/
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #48bb78;
+}
