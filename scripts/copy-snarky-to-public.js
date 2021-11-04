@@ -29,8 +29,8 @@ function copyFolderSync(src, dest) {
     path.join(PUBLIC_PATH, "snarky_js_chrome.bc.js")
   );
   fs.copyFileSync(
-    path.join(NODE_MODULES_PATH, "snarky.js"),
-    path.join(PUBLIC_PATH, "snarky.js")
+    path.join(NODE_MODULES_PATH, "index.js"),
+    path.join(PUBLIC_PATH, "index.js")
   );
   fs.copyFileSync(
     path.join(NODE_MODULES_PATH, "plonk_init.js"),
